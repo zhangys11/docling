@@ -1,0 +1,95 @@
+pip install docling
+pip install click==8.1.7 # latest version will have the following error
+docling team.pptx
+
+Traceback (most recent call last):
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\types.py", line 348, in convert
+    return next(
+        original
+        for original, normalized in normalized_mapping.items()
+        if normalized == normed_value
+    )
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\core.py", line 194, in _main
+    with self.make_context(prog_name, args, **extra) as ctx:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 2349, in process_value
+    value = self.type_cast_value(ctx, value)
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 2337, in type_cast_value
+    return convert(value)
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 2309, in convert
+    return self.type(value, param=self, ctx=ctx)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\types.py", line 90, in __call__
+    return self.convert(value, param, ctx)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\types.py", line 354, in convert
+    self.fail(
+    ~~~~~~~~~^
+        self.get_invalid_choice_message(value=value, ctx=ctx),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        param=param,
+        ^^^^^^^^^^^^
+        ctx=ctx,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\types.py", line 143, in fail
+    raise BadParameter(message, ctx=ctx, param=param)
+click.exceptions.BadParameter: <ImageRefMode.EMBEDDED: 'embedded'> is not one of 'placeholder', 'embedded', 'referenced'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\Scripts\docling.exe\__main__.py", line 7, in <module>
+    sys.exit(app())
+             ~~~^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\main.py", line 340, in __call__
+    raise e
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\main.py", line 323, in __call__
+    return get_command(self)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\core.py", line 677, in main
+    return _main(
+        self,
+    ...<6 lines>...
+        **extra,
+    )
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\core.py", line 216, in _main
+    rich_utils.rich_format_error(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\typer\rich_utils.py", line 693, in rich_format_error
+    console.print(ctx.get_usage())
+                  ~~~~~~~~~~~~~^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 724, in get_usage
+    return self.command.get_usage(self)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 969, in get_usage
+    self.format_usage(ctx, formatter)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 1002, in format_usage
+    pieces = self.collect_usage_pieces(ctx)
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 1012, in collect_usage_pieces
+    rv.extend(param.get_usage_pieces(ctx))
+              ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\eleve\AppData\Roaming\Python\Python313\site-packages\click\core.py", line 3104, in get_usage_pieces
+    return [self.make_metavar(ctx)]
+            ~~~~~~~~~~~~~~~~~^^^^^
+TypeError: TyperArgument.make_metavar() takes 1 positional argument but 2 were given

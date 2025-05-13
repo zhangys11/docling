@@ -56,6 +56,11 @@ Works on macOS, Linux and Windows environments. Both x86_64 and arm64 architectu
 
 More [detailed installation instructions](https://docling-project.github.io/docling/installation/) are available in the docs.
 
+## Manual Installation
+
+pip install poetry
+poetry install --all-extras
+
 ## Getting started
 
 To convert individual documents with python, use `convert()`, for example:
